@@ -12,16 +12,23 @@ h1, h2, .randomJokeDiv,h4, h6, h5, h3{
 padding-bottom: 20px;
 
 }
-form{
+div + div, .yeah{
     background-color: white;
     border: 1px solid black;
     padding-bottom: 20px;
 }
 
+.yeah {
+    border-bottom: none;
+}
+
 div + div {
     padding-bottom: 20px;
 }
-
+ 
+h5{
+    display: none;
+}
 
 label{
     display: flex;
