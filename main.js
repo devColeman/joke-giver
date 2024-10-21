@@ -6,8 +6,10 @@ const miscCheckbox = document.getElementById("misc")
  const darkCheckbox = document.getElementById("dark")
  const punCheckbox = document.getElementById("pun")
  const spookyCheckbox = document.getElementById("spooky")
-mySubmit = document.getElementById("submit")
+ const christmasCheckbox = document.getElementById("christmas")
+let mySubmit = document.getElementById("submit")
 let url = "https://v2.jokeapi.dev/joke/Any?type=single"
+document.getElementById('submit2').addEventListener('submit', runz)
 
 
 fetch(url)
@@ -16,6 +18,34 @@ fetch(url)
      document.querySelector('h2').innerHTML = data.joke
    
    } )
+
+    function runz(event){
+   event.preventDefault()
+   if(christmasCheckbox.checked){
+    url = "https://v2.jokeapi.dev/joke/Any?type=twopart"
+    url = url.replace("Any", "Christmas")
+   }else if(spookyCheckbox.checked){
+    url = url = "https://v2.jokeapi.dev/joke/Any?type=twopart"
+    url = url.replace("Any", "Spooky")
+
+   }
+   console.log(url)
+   fetch(url)
+    .then(res => res.json())
+    .then(data => {
+      console.log(data)
+     document.querySelector('h3').innerHTML = data.setup
+     document.querySelector('h5').innerHTML = data.delivery
+   
+   } )
+
+
+    }
+
+
+
+
+
 
 mySubmit.onclick = function(event){
     event.preventDefault()
