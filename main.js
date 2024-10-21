@@ -90,10 +90,9 @@ fetch(url)
 
 
 function joke(){
-    fetch("https://v2.jokeapi.dev/joke/Any?blacklistFlags=nsfw&type=single")
+    fetch("https://v2.jokeapi.dev/joke/Any?type=single")
     .then(res => res.json())
     .then(data => {
-       
      document.querySelector('h2').innerHTML = data.joke
    
    } 
