@@ -13,7 +13,6 @@ let url = "https://v2.jokeapi.dev/joke/Any?type=single"
 fetch(url)
     .then(res => res.json())
     .then(data => {
-       console.log(data.joke)
      document.querySelector('h2').innerHTML = data.joke
    
    } )
@@ -47,11 +46,10 @@ else{
 fetch(url)
     .then(res => res.json())
     .then(data => {
-       console.log(data.joke)
-     document.querySelector('h2').innerHTML = data.joke
+
+     document.querySelector('h6').innerHTML = data.joke
    
    } )
-console.log(url)
 
 }
 
@@ -65,7 +63,7 @@ function joke(){
     fetch("https://v2.jokeapi.dev/joke/Any?blacklistFlags=nsfw&type=single")
     .then(res => res.json())
     .then(data => {
-       console.log(data.joke)
+       
      document.querySelector('h2').innerHTML = data.joke
    
    } 
